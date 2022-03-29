@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#Ignore .vscode
+../.vscode
+
+# Ignore frontendTemplate.sh
+frontendTemplate.sh
+
+# Ignore todo.txt
+todo.txt
