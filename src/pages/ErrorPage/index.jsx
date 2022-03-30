@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ErrorPage.css';
 
 function ErrorPage({ errorName, errorCode }) {
   return (
-    <div className="not-found">
+    <div className="errorpage-text">
       Error
       {' '}
       {errorCode}

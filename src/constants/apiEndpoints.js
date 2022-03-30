@@ -6,7 +6,7 @@ export const getAllRestaurants = {
 };
 export const getMenusByRestaurant = (restaurantId) => ({
   method: 'get',
-  url: `restaurants/${restaurantId}/`,
+  url: `/restaurants/${restaurantId}/`,
 });
 
 export const getRestaurantsByDish = (dishName) => ({

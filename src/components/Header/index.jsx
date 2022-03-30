@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <header className="header">
-      <h1 data-testid="headerHeading" className="header-heading">Swiggy</h1>
+      <h1 data-testid="headerHeading" className="header-heading">SWIGGY</h1>
     </header>
   );
 }

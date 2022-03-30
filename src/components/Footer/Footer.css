@@ -1,17 +1,24 @@
-footer{
+.footer{
     width: 100%;
-    
     height: 8vh;
-    background-color: #0080FF;
+    background-color: #FC8019;
     color: white;
     display: flex;
     align-items: center;
-    padding-left: 3%;
+    justify-content: flex-end;
+    margin:0px;
+    margin-top:10px;
+    position:relative;
 }
 
-@media screen and (max-height:400px){
+.footer-text {
+    font-size: large;
+    padding-right:20px;
+}
+
+@media screen and (min-width:600px){
     .footer{
-        font-size: medium;
-        min-height: 20px;
+        position:absolute;
+        bottom:0;
     }
 }

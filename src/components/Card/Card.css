@@ -1,0 +1,57 @@
+.card-button {
+    background-color: white;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.card-container {
+    background-color:#f7e1c8;
+    color:black;
+    padding:10px;
+    display:flex;
+    margin-left:1px;
+    margin-right: 1px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    width:250px;
+    height:250px;
+    flex-direction:column;
+    border-radius: 10px;
+}
+
+.card-image {
+    margin-left:68px;
+    margin-top: 5px;
+    width:120px;
+    height:120px;
+    border-radius: 70px;
+}
+
+.card-text {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.restaurant-name {
+    margin:0px;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.restaurant-location {
+    margin:0px;
+    font-size: 18px;  
+}
+
+.restaurant-costForTwo {
+    margin:0px;
+    font-size: 18px;
+}
+
+.card-container:hover {
+    background-color: #f8913c
+}
+
+.card-container:hover .card-text {
+    color:white;
+}
