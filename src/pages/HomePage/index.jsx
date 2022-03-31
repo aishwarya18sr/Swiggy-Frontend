@@ -16,9 +16,20 @@ function HomePage() {
       setRestaurantData(response);
     });
   }, []);
+  const uniqueDishNames = new Set();
   const searchClickHandler = (dishName) => {
     makeRequest(getRestaurantsByDish(dishName)).then((response) => {
-      const formattedResponse = response.map((eachResponse) => eachResponse.Restaurants[0]);
+      let formattedResponse = response.map((eachResponse) => {
+        console.log(...eachResponse.Restaurants);
+        return eachResponse.Restaurants;
+      });
+      formattedResponse = formattedResponse.reduce((acc, eachResponse) => {
+        if (!uniqueDishNames.has(eachResponse.name)) {
+          uniqueDishNames.add(eachResponse.name);
+          acc.push(...eachResponse);
+        }
+        return acc;
+      }, []);
       setRestaurantData(formattedResponse);
     });
   };
