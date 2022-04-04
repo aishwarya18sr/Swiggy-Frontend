@@ -9,7 +9,6 @@ import './HomePage.css';
 
 function HomePage() {
   const [restaurantData, setRestaurantData] = useState([]);
-  // const [isRestaurantDataLoaded, setIsRestaurantDataLoaded] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     makeRequest(getAllRestaurants).then((response) => {
@@ -18,8 +17,23 @@ function HomePage() {
   }, []);
   const searchClickHandler = (dishName) => {
     makeRequest(getRestaurantsByDish(dishName)).then((response) => {
-      const formattedResponse = response.map((eachResponse) => eachResponse.Restaurants[0]);
-      setRestaurantData(formattedResponse);
+      if (!response) {
+        setRestaurantData([]);
+        return;
+      }
+      const formattedResponse = response.map((eachResponse) => eachResponse.Restaurants);
+      const restaurants = new Set();
+      formattedResponse.forEach((eachResponse) => {
+        if (eachResponse.length === 1) {
+          restaurants.add(eachResponse[0]);
+        } else {
+          eachResponse.forEach((restaurant) => {
+            restaurants.add(restaurant);
+          });
+        }
+      });
+      const formattedRestaurants = Array.from(restaurants);
+      setRestaurantData(formattedRestaurants);
     });
   };
   const cardClickHandler = (restaurantId) => {

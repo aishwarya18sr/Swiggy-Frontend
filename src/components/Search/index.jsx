@@ -15,7 +15,7 @@ function Search({ onSearchHandler }) {
   };
   return (
     <div className="search-container">
-      <input className="search-input" type="text" placeholder="Search.." name="search" onChange={onChangeHandler} />
+      <input value={dishName} className="search-input" type="text" placeholder="Search.." name="search" onChange={onChangeHandler} />
       <button className="search-button" type="submit" onClick={onClickHandler}><FaSearch /></button>
     </div>
   );
